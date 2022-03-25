@@ -1,0 +1,13 @@
+module load python
+
+module load singularity/3.0.2
+
+source activate pythonCondaEnvWithCPAC
+
+#used create the data yml file (not actually run on slurm)
+#I then copied it to this folder to save.
+cpac run <path_to>/ABIDEI/derivatives participant --pipeline_file <path_to>CPAC_config_ABIDEI.yml --platform singularity
+
+#submit the parallel script
+sbatch parallel.sh
+
